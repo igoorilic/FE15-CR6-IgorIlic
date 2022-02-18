@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { meals } from '../meals';
 import { IMeals } from '../IMeals';
+import { meals } from '../meals';
 
 @Component({
   selector: 'app-details',
@@ -18,8 +18,10 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['mealId'];
-      this.meal = meals[this.id];
+      this.meal = meals[this.id]
     });
+
+
   }
 
 }

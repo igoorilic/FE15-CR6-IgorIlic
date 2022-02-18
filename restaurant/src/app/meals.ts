@@ -47,5 +47,5 @@ export const meals = [
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illo voluptatum aliquam atque inventore sit.',
       price: 4,
       availability: true
-    },
-]
+    }
+];
