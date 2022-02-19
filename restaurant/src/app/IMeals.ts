@@ -4,4 +4,5 @@ export interface IMeals {
     description: string;
     price: number;
     availability: boolean;
+    descriptionDetails: string;
 }

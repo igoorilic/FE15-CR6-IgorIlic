@@ -1,11 +1,11 @@
 <h1 class="specialtext text-center p-5">Meal Details</h1>
-<div class="container">
+<div class="container w-75">
     <div class="card mb-3" *ngIf="meal">
         <img src="{{meal.image}}" class="card-img-top picture" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{meal.name}}</h5>
-            <p class="card-text">{{meal.description}}</p>
-            <button (click)="addToCart()">Buy</button>
+            <p class="card-text">{{meal.descriptionDetails}}</p>
+            <button (click)="addToCart()" class="btn-success w-100 text-center rounded">Buy</button>
         </div>
     </div>
 </div>
