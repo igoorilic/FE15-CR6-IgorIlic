@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between pb-3">
                                 <h6 class="card-title">{{item.name}}</h6>
-                                <h6 class="card-title">Price: {{item.price | currency}}</h6>
+                                <h6 class="card-title">Price: {{item.price | currency:'EUR'}}</h6>
                             </div>
                             <p class="card-text w-75">{{item.description}}</p>
                         </div>
@@ -30,22 +30,22 @@
             <div class="ps-3 pe-3 pt-4">
                 <div class="d-flex justify-content-between">
                     <p>Products</p>
-                    <p>{{amount | currency}}</p>
+                    <p>{{amount | currency:'EUR'}}</p>
                 </div>
                 <div class="d-flex justify-content-between">
                     <p>Service</p>
-                    <p>{{service | currency}}</p>
+                    <p>{{service | currency:'EUR'}}</p>
                 </div>
                 <div class="d-flex justify-content-between border-bottom">
                     <p>Discount</p>
-                    <p>{{discount | currency}}</p>
+                    <p>{{discount | currency:'EUR'}}</p>
                 </div>
                 <div class="d-flex justify-content-between pt-3">
                     <div>
                         <p class="mb-0"><b> Total amount</b></p>
                         <p><b>(including VAT)</b></p>
                     </div>
-                    <p>{{totalPrice | currency}}</p>
+                    <p>{{totalPrice | currency:'EUR'}}</p>
                 </div>
             </div>
         </div>

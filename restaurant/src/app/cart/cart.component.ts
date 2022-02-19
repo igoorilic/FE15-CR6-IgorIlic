@@ -30,6 +30,7 @@ clearCart() {
 onSubmit() {
   if(this.checkoutForm.valid) {
     var sum = this.checkoutForm.value;
+    console.log(sum)
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
@@ -38,29 +39,20 @@ onSubmit() {
 }
 
 priceSum(){
-  this.amount = 0;
-  this.service = 0;
-  this.discount = 0;
-  this.totalPrice = 0;
   for(let val of this.items) {
     this.amount = this.amount + val.price
-    this.totalPrice = this.amount
-  }
-  if(this.amount >= 40) {
-    this.discount = this.amount * 0.15;
     this.service = this.amount * 0.10;
-    this.totalPrice = this.amount + this.service - this.discount;
+    this.totalPrice = this.amount + this.service;
   }
-  else{
-    this.service = this.amount * 0.1
-    this.totalPrice = this.amount + this.service - this.discount;
+  if(this.totalPrice >= 40) {
+    this.discount = this.totalPrice * 0.15;
   }
-
+  this.totalPrice = this.amount + this.service - this.discount;
 }
-
 
 ngOnInit(): void {
   this.items = this.cartService.getItems();
   this.priceSum()
+  console.log(this.totalPrice)
 }
 }
