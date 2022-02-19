@@ -1,0 +1,44 @@
+<div class="container pb-5">
+    <h3 class="pt-5 pb-2">Cart</h3>
+    <div class="cart-item" *ngFor="let item of items">
+        <div class="card mb-3" style="max-width: 60%">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{item.image}}" class="img-fluid p-3" alt="">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between pb-3">
+                            <h6 class="card-title">{{item.name}}</h6>
+                            <h6 class="card-title">Price: {{item.price | currency}}</h6>
+                        </div>
+                        <p class="card-text">{{item.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <h1 class="specialtext">Order Form</h1>
+        <p class="border-bottom">please fill up the info for the delivery</p>
+        <p class="mb-2">Name</p>
+        <div>
+
+            <label for="name">
+        </label>
+            <input id="name" type="text" class="w-100 mb-2" formControlName="name">
+        </div>
+        <p class="mb-2"> Adress</p>
+        <div>
+            <label for="address">
+        </label>
+            <input id="address" type="text" class="w-100 mb-3" formControlName="address">
+        </div>
+
+        <button class="button btn-primary mb-5 rounded" type="submit">Purchase</button>
+    </div>
+
+</form>

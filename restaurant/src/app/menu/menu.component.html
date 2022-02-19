@@ -11,7 +11,7 @@
                     <p class="card-text">{{meal.description}}</p>
                     <p class="border-top border-bottom p-2">{{meal.price | currency}}</p>
                     <ng-template [ngIf]="meal.availability > false" [ngIfElse]="none">
-                        <a routerLink="meals/{{mealId}}" class="btn btn-primary">Details</a>
+                        <a routerLink="/meals/{{mealId}}" class="btn btn-primary">Details</a>
                         <a href="#" class="btn btn-success ms-3">Order</a>
                     </ng-template>
                     <ng-template #none>
