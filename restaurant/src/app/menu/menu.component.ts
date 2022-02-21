@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { meals } from '../meals';
 import { IMeals } from '../IMeals';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,9 +11,12 @@ import { IMeals } from '../IMeals';
 export class MenuComponent implements OnInit {
   meals:IMeals[] = meals;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
-  ngOnInit(): void {
+  addToCart(meal:IMeals){
+    window.alert('Your meal has been added to the cart!');
+    this.cartService.addToCart(meal);
+  }  ngOnInit(): void {
   }
 
 }

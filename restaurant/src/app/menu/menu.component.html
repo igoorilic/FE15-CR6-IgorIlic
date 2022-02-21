@@ -12,7 +12,7 @@
                     <p class="border-top border-bottom p-2">{{meal.price | currency:'EUR'}}</p>
                     <ng-template [ngIf]="meal.availability > false" [ngIfElse]="none">
                         <a routerLink="/meals/{{mealId}}" class="btn btn-primary">Details</a>
-                        <a class="btn btn-success ms-3">Order</a>
+                        <a (click)="addToCart(meal)" class="btn btn-success ms-3">Order</a>
                     </ng-template>
                     <ng-template #none>
                         <p class="text-danger">This product is not available</p>
